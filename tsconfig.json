@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "target": "es2016",
+    "module": "esnext",
+    "composite": true, 
+    "sourceMap": false,
+    "outDir":"dist",
+    "lib":["ES2017","dom"]
+  },
+  "include": ["./core/*","./*"]
+}
