@@ -4,10 +4,10 @@ interface Ref {
     depend: () => void;
     notice: () => void;
 }
-declare class Dep<T> implements Ref {
+declare class Dep<T = any> implements Ref {
     _val: T | undefined;
     effects: Set<unknown>;
-    constructor(val?: T);
+    constructor(val?: T | undefined);
     get value(): T | undefined;
     set value(newVal: T | undefined);
     depend(): void;
@@ -15,5 +15,6 @@ declare class Dep<T> implements Ref {
 }
 export declare function effectWatch(effect: () => void): void;
 export declare function createRef<T>(params: T): Dep<T>;
+export declare const targetMap: Map<any, any>;
 export declare function createReactive(raw: any): any;
 export {};

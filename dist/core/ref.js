@@ -2,8 +2,8 @@
  * @Description: vue3核心
  * @Author: Gavin
  * @Date: 2021-11-05 10:44:43
- * @LastEditTime: 2022-02-26 21:05:49
- * @LastEditors: Gavin
+ * @LastEditTime: 2023-02-03 13:58:14
+ * @LastEditors: GAtomis
  */
 let currentEffects;
 class Dep {
@@ -17,10 +17,10 @@ class Dep {
     }
     set value(newVal) {
         this._val = newVal;
-        console.log(this._val);
+        console.log(this._val, newVal);
         this.notice();
     }
-    //收集依赖
+    //收集依赖 
     depend() {
         if (currentEffects) {
             //进入集合
@@ -45,7 +45,7 @@ export function effectWatch(effect) {
 export function createRef(params) {
     return new Dep(params);
 }
-const targetMap = new Map();
+export const targetMap = new Map();
 function getDep(target, key) {
     let depsMap = targetMap.get(target);
     if (!depsMap) {

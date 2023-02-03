@@ -1,0 +1,22 @@
+{
+  "name": "vue-core-simple",
+  "version": "1.0.0",
+  "description": "一个vue3简易模型思想",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GAtomis/vue-core-simple.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GAtomis/vue-core-simple/issues"
+  },
+  "homepage": "https://github.com/GAtomis/vue-core-simple#readme",
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
+}

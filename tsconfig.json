@@ -10,5 +10,5 @@
     "outDir":"dist",
     "lib":["ES2017","dom"]
   },
-  "include": ["./core/*","./*"]
+  "include": ["./core/*","./*","src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx"]
 }

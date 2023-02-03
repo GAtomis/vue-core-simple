@@ -2,8 +2,8 @@
  * @Description: vue3核心 
  * @Author: Gavin
  * @Date: 2021-11-05 10:44:43
- * @LastEditTime: 2022-03-09 15:18:27
- * @LastEditors: Gavin
+ * @LastEditTime: 2023-02-03 13:58:14
+ * @LastEditors: GAtomis
  */
 
 // Ref接口
@@ -28,13 +28,14 @@ class Dep<T=any> implements Ref {
     return this._val
   }
   set value(newVal) {
+
     this._val = newVal
-    console.log(this._val);
+    console.log(this._val,newVal);
     
     this.notice()
 
   }
-  //收集依赖
+  //收集依赖 
   depend() {
     if (currentEffects) {
       //进入集合
@@ -64,7 +65,7 @@ export function createRef<T>(params: T):Dep<T> {
 
 
 
-const targetMap = new Map()
+export const targetMap = new Map()
 
 function getDep(target: any, key: string): Ref {
   let depsMap = targetMap.get(target)
