@@ -8,7 +8,7 @@
     "composite": true, 
     "sourceMap": false,
     "outDir":"dist",
-    "lib":["ES2017","dom"]
+    "lib":["ES2017","dom","ESNext"]
   },
   "include": ["./core/*","./*","src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx"]
 }

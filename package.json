@@ -4,7 +4,7 @@
   "description": "一个vue3简易模型思想",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node ./promise/index.js "
   },
   "repository": {
     "type": "git",
