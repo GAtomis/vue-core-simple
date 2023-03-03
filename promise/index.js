@@ -34,26 +34,18 @@ var APromise = /** @class */ (function () {
         }
     };
     APromise.prototype.then = function (onFulfilled, onRejected) {
-        var _this = this;
-        if (this.state === 'fulfilled') {
-            onFulfilled(this.value);
+        if (this.isFunction(onFulfilled)) {
         }
-        ;
-        if (this.state === 'rejected') {
-            onRejected(this.reason);
+        else {
+            new Error("请传入正确的方法");
         }
-        ;
-        // 当状态state为pending时
-        if (this.state === 'pending') {
-            // onFulfilled传入到成功数组
-            this.onResolvedCallbacks.push(function () {
-                onFulfilled(_this.value);
-            });
-            // onRejected传入到失败数组
-            this.onRejectedCallbacks.push(function () {
-                onRejected(_this.reason);
-            });
+        if (this.isFunction(onRejected)) {
         }
+    };
+    APromise.prototype.isFunction = function (val) {
+        if (!val)
+            new Error("请输入参数");
+        return typeof val == "function";
     };
     return APromise;
 }());

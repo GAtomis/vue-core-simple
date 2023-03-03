@@ -39,24 +39,25 @@ class APromise<T> {
     }
 
     then(onFulfilled, onRejected) {
-        if (this.state === 'fulfilled') {
-            onFulfilled(this.value);
-        };
-        if (this.state === 'rejected') {
-            onRejected(this.reason);
-        };
-        // 当状态state为pending时
-        if (this.state === 'pending') {
-            // onFulfilled传入到成功数组
-            this.onResolvedCallbacks.push(() => {
-                onFulfilled(this.value);
-            })
-            // onRejected传入到失败数组
-            this.onRejectedCallbacks.push(() => {
-                onRejected(this.reason);
-            })
-        }
 
+        if(this.isFunction(onFulfilled)){
+
+
+        }else{
+            new Error("请传入正确的方法")
+        }
+        if(this.isFunction(onRejected)){
+
+
+        }
+        
+
+    }
+    isFunction(val:any){
+        if (!val) new Error("请输入参数")
+        return typeof val=="function"
+
+     
     }
 
 
